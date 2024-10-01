@@ -4,7 +4,7 @@
 
 ## 📚 User Guides
 
-* [Page](user-guides/page.md)
+* [Viewing Dashboard](user-guides/viewing-dashboard.md)
 * [How to Mint](user-guides/how-to-mint.md)
 
 ## ⚒️ Developers
