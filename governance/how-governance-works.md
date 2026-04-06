@@ -5,7 +5,7 @@ Every token launched on Sudo automatically gets a sovereign DAO. After the raffl
 ## The Basics
 
 - **Voting power** is based on your token balance. 1 token = 1 vote.
-- **Anyone with 100+ tokens** can create a proposal.
+- **Anyone holding at least 1 winning ticket worth of tokens** can create a proposal. The threshold equals the raffle's "Winning Ticket" amount — the same number of tokens a single winner receives.
 - **Anyone with voting power** can vote on active proposals.
 - **Execution is fully permissionless** — once a proposal passes, any wallet can trigger execution. You just pay gas. No admin key, no operator, no single point of failure.
 

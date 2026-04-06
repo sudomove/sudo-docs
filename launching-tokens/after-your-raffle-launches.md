@@ -32,7 +32,7 @@ After migration, the creator has no special privileges. All control flows throug
 
 Every launched token gets a fully sovereign DAO. As a token holder, you can:
 
-- Create governance proposals (requires 100+ tokens)
+- Create governance proposals (requires at least 1 winning ticket worth of tokens)
 - Vote on proposals from other holders
 - Execute passed proposals (any wallet can do this — just pays gas)
 - Manage LP positions, treasury funds, token supply, and metadata through governance

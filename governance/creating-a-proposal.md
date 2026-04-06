@@ -1,6 +1,6 @@
 # Creating a Proposal
 
-Any token holder with at least 100 tokens can create a governance proposal for their token's DAO.
+Any token holder with at least 1 winning ticket worth of tokens can create a governance proposal for their token's DAO. The threshold equals the raffle's "Winning Ticket" amount — the same number of tokens a single raffle winner receives.
 
 ## Steps
 
@@ -61,7 +61,7 @@ Review all parameters and click **Submit Proposal**. Sign the transaction in you
 
 ## Requirements
 
-- Hold at least **100 tokens** in the DAO to create a proposal.
+- Hold at least **1 winning ticket worth of tokens** to create a proposal.
 - Wallet must be connected.
 
 ## After Submission
