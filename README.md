@@ -40,7 +40,7 @@ No bots. No front-running. No privileged access. Every ticket has an equal chanc
 * **Built-in governance** — Every token gets a DAO with on-chain proposals and voting
 * **Automatic liquidity** — Post-raffle LP creation and migration to DEX
 * **On-chain trading** — Swap tokens directly after liquidity migration
-* **Keyless onboarding** — Connect with Aptos Connect for social login, or use Martian/Pontem wallets
+* **Keyless onboarding** — Connect with Aptos Connect for social login, or use Petra, Nightly, Martian, Pontem, and any AIP-62 compatible wallet
 
 ## Links
 

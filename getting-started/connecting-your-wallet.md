@@ -4,17 +4,25 @@ You need a wallet to buy raffle tickets, vote on governance proposals, and trade
 
 ## Supported Wallets
 
+Sudo supports any Aptos-compatible wallet, including:
+
 - **Aptos Connect** — Social login (Google, Apple, etc.). No wallet extension needed. Best for new users.
-- **Martian Wallet** — Browser extension wallet for Aptos.
-- **Pontem Wallet** — Browser extension wallet for Aptos.
+- **Petra** — Aptos' official wallet. Browser extension and mobile.
+- **Nightly** — Multi-chain wallet with Aptos support. Browser extension and mobile.
+- **Martian** — Browser extension wallet for Aptos.
+- **Pontem** — Browser extension wallet for Aptos.
+- **OKX Wallet** — Multi-chain wallet with Aptos support.
+- **Trust Wallet** — Mobile-first multi-chain wallet.
+
+Any wallet that supports the AIP-62 standard will work with Sudo automatically.
 
 ## How to Connect
 
 1. Click **Connect Wallet** in the top-right corner of the page.
 2. Choose your wallet:
-   - **Aptos Connect** wallets appear at the top of the dialog if available.
-   - **Installed wallets** (Martian, Pontem) appear next.
-   - **Installable wallets** are listed at the bottom with links to install them.
+   - **Aptos Connect** wallets appear at the top of the dialog for social login.
+   - **Installed wallets** (Petra, Nightly, Martian, Pontem, etc.) appear next — any compatible wallet you have installed will show up automatically.
+   - **More wallets** are listed in a dropdown with install links.
 3. Follow your wallet's prompts to approve the connection.
 
 Once connected, the button changes to show your wallet address. Click it to:
