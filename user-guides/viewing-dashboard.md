@@ -1,3 +1,0 @@
-# Viewing Dashboard
-
-## Key Stats

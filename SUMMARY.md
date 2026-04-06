@@ -2,12 +2,37 @@
 
 * [About](README.md)
 
-## 📚 User Guides
+## Getting Started
 
-* [Viewing Dashboard](user-guides/viewing-dashboard.md)
-* [How to Mint](user-guides/how-to-mint.md)
+* [Connecting Your Wallet](getting-started/connecting-your-wallet.md)
+* [Platform Overview](getting-started/platform-overview.md)
 
-## ⚒️ Developers
+## Launching Tokens
+
+* [Creating a Raffle](launching-tokens/creating-a-raffle.md)
+* [Free vs. Paid Raffles](launching-tokens/free-vs-paid-raffles.md)
+* [After Your Raffle Launches](launching-tokens/after-your-raffle-launches.md)
+
+## Participating in Raffles
+
+* [Browsing Raffles](participating/browsing-raffles.md)
+* [Buying Tickets](participating/buying-tickets.md)
+* [Raffle Lifecycle](participating/raffle-lifecycle.md)
+
+## Governance
+
+* [How Governance Works](governance/how-governance-works.md)
+* [Creating a Proposal](governance/creating-a-proposal.md)
+* [Voting](governance/voting.md)
+
+## Trading
+
+* [Swapping Tokens](trading/swapping-tokens.md)
+
+## Dashboard
+
+* [Your Dashboard](dashboard/your-dashboard.md)
+
+## Developers
 
 * [Smart Contracts](developers/smart-contracts.md)
-* [Minting from CLI](developers/minting-from-cli.md)
