@@ -12,7 +12,7 @@ Any token holder can vote on active governance proposals in their DAO.
 
 ## Voting Power
 
-Your voting power equals your LP token holdings for that token's pool. The more LP you hold, the more weight your vote carries.
+Your voting power equals your token balance. 1 token = 1 vote. The more tokens you hold, the more weight your vote carries.
 
 Your current voting power is displayed in the DAO detail page header and in the **Powers** tab.
 
