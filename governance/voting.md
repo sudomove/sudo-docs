@@ -16,14 +16,24 @@ Your voting power equals your LP token holdings for that token's pool. The more 
 
 Your current voting power is displayed in the DAO detail page header and in the **Powers** tab.
 
-## Proposal Status
+## Proposal Lifecycle
 
 | Status | Meaning |
 |---|---|
 | **Active** | Voting is open — you can cast your vote |
-| **Pending** | Voting has ended, awaiting execution |
-| **Executed** | Proposal passed and was executed on-chain |
+| **Passed** | Voting ended, quorum and threshold met — ready for execution |
+| **Executed** | Proposal was executed on-chain |
 | **Failed** | Proposal didn't reach quorum or pass threshold |
+
+## Executing a Passed Proposal
+
+Once a proposal reaches **Passed** status (voting period ended, quorum met, pass threshold met), anyone can execute it:
+
+1. Open the passed proposal.
+2. Click **Execute Proposal**.
+3. Sign the transaction — you just pay gas.
+
+Execution is fully permissionless. You don't need to be the proposer, a token holder, or an admin. The governance contract validates that the proposal passed legitimately, then uses the DAO's stored SignerCapability to carry out the approved action. The caller has no influence over what gets executed — they only trigger what was already voted on.
 
 ## Quorum and Pass Threshold
 
@@ -41,3 +51,10 @@ Vote counts update in real-time via live connection. As other holders vote, you'
 ## One Vote Per Wallet
 
 Each wallet address can vote once per proposal. You cannot change your vote after casting it.
+
+## Security
+
+- **No double execution** — A proposal can only be executed once. The contract marks it as executed atomically before dispatching the action.
+- **No admin override** — The DAO account has a dead authentication key. No external wallet can sign transactions as the DAO.
+- **Slippage protection** — LP operations include minimum output amounts. If the pool moves too much between proposal creation and execution, the transaction reverts.
+- **All on-chain** — Every proposal, vote, and execution is recorded on-chain and publicly verifiable.

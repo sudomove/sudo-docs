@@ -14,22 +14,29 @@ The raffle ends when either:
 - **All raffle tokens are distributed** (sold out), or
 - **The expiry time is reached** (remaining tokens are burned)
 
-## Liquidity Migration
+## Liquidity Migration and DAO Sovereignty
 
-After the raffle ends, liquidity migrates automatically to the configured DEX (Tapp DEX):
+After the raffle ends, liquidity migrates automatically and the DAO takes full ownership:
 
 1. The remaining 50% of token supply is paired with collected APT.
-2. A liquidity pool is created on the DEX.
-3. The LP position is owned by the token's DAO.
+2. A liquidity pool is created on the configured DEX (Tapp DEX).
+3. **Token admin rights** (mint, burn, transfer) are transferred to the DAO account.
+4. **LP tokens** are transferred to the DAO account.
+5. **External access to the DAO is killed** — no wallet, including the creator's, can control the DAO directly.
 
 The raffle page shows migration status in real-time. Once complete, a green banner appears with an **Open Swap** link to trade the token.
 
+After migration, the creator has no special privileges. All control flows through governance — proposals and votes, same as every other token holder.
+
 ## Your Token's DAO
 
-Every launched token gets a DAO. As the creator and a token holder, you can:
+Every launched token gets a fully sovereign DAO. As a token holder, you can:
 
-- Create governance proposals
+- Create governance proposals (requires 100+ tokens)
 - Vote on proposals from other holders
-- Manage LP positions, token supply, metadata, and more through governance
+- Execute passed proposals (any wallet can do this — just pays gas)
+- Manage LP positions, treasury funds, token supply, and metadata through governance
+
+The DAO account is the treasury. All assets (APT, tokens, LP positions) live at the DAO address and can only be moved through passed proposals.
 
 See the [Governance](../governance/how-governance-works.md) section for details.

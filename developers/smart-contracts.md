@@ -1,6 +1,6 @@
 # Smart Contracts
 
-Sudo Protocol is built on two core Move modules deployed on the Aptos blockchain.
+Sudo Protocol is built on core Move modules deployed on the Aptos blockchain.
 
 ## Modules
 
@@ -12,7 +12,8 @@ Handles token creation and lifecycle management using the Aptos Fungible Asset (
 
 * Token initialization with name, symbol, decimals, icon URI, and project URI
 * Mint, burn, and transfer operations
-* Creator-controlled token management via stored refs (MintRef, BurnRef, TransferRef)
+* Token admin rights stored in a transferable Object (MintRef, BurnRef, TransferRef)
+* Admin Object transferred to DAO account after liquidity migration
 * View functions for metadata lookup and balance queries
 
 ### sudo\_raffle.move — VRF Raffle Engine
@@ -52,11 +53,26 @@ Every token launch splits the supply 50/50:
 
 The resulting LP position is owned by the token's DAO.
 
-## Governance
+## Governance — Permissionless Execution
 
-Each token's DAO supports on-chain governance with proposals and voting. Governance actions include LP management (lock, migrate, rebalance), token minting/burning, metadata updates, and key management.
+Each token's DAO supports fully permissionless on-chain governance.
 
-Permissionless proposal execution via SignerCapability is in development — see [GitHub issue #4](https://github.com/Sudo-Protocol/sudo-latest/issues/4) for the full design.
+**Architecture:**
+
+* DAO account is created as a resource account with a stored `SignerCapability`
+* External access is killed via dead authentication key (zero key + dead authenticator)
+* Token admin Object and LP tokens are transferred to the DAO after migration
+* `execute_proposal()` is callable by any wallet — the caller just pays gas
+* The SignerCapability is only accessible inside the governance module's execution function — it cannot be used for arbitrary transactions
+
+**Governance actions:** LP rebalance, LP migrate, LP lock, mint, burn, metadata updates, treasury transfers, signal proposals.
+
+**Security properties:**
+
+* No admin retains any control after migration
+* Proposals can only be executed once (atomic `executed` flag set before dispatch)
+* LP operations include slippage protection (reverts if pool moved too much)
+* All proposals, votes, and executions are on-chain and publicly verifiable
 
 ## Source Code
 

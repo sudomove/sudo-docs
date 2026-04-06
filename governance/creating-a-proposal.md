@@ -16,7 +16,7 @@ Select what your proposal does:
 - **Mint Tokens** — Create new tokens and send them to an address
 - **Burn Tokens** — Burn tokens from an address
 - **Update Token Metadata** — Change the token's name, symbol, URI, or description
-- **Change DAO Keys** — Add, remove, or rotate governance keys
+- **Transfer Funds** — Send APT or tokens from the DAO treasury
 
 ### Step 2: Configure the Action
 
@@ -24,7 +24,10 @@ Depending on your action type:
 
 **Manage LP Tokens:**
 - Select the DEX venue
-- Choose an LP action: Lock (set duration in days), Migrate (choose destination DEX), or Rebalance
+- Choose an LP action:
+  - **Lock** — Lock LP tokens for a specified duration (in days)
+  - **Migrate** — Move liquidity to a different DEX
+  - **Rebalance** — Remove some or all liquidity, optionally re-add at different ratios. Removed funds go to the DAO treasury.
 
 **Mint Tokens:**
 - Enter the amount to mint
@@ -38,9 +41,10 @@ Depending on your action type:
 - Check which fields to update (name, symbol, URI, description)
 - Fill in the new values for checked fields
 
-**Change DAO Keys:**
-- Choose the key action (add, remove, or rotate)
-- Enter the key address
+**Transfer Funds:**
+- Select the asset (APT or token)
+- Enter the amount
+- Enter the destination wallet address
 
 ### Step 3: Set Voting Parameters
 
@@ -64,6 +68,4 @@ Review all parameters and click **Submit Proposal**. Sign the transaction in you
 
 Your proposal appears in the DAO's proposal list with an **Active** status badge. Other token holders can now vote on it for the duration you configured.
 
-## Current Limitations
-
-Governance is currently in its first phase. Proposals and voting are fully on-chain, but proposal execution is not yet permissionless — passed proposals are executed through a governance key. Full permissionless execution via SignerCapability (where any wallet can trigger execution of passed proposals) is being implemented in the next upgrade. See [GitHub issue #4](https://github.com/Sudo-Protocol/sudo-latest/issues/4) for the full design.
+Once the proposal passes and the voting period ends, anyone can execute it — see [Voting](voting.md) for details on execution.

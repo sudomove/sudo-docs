@@ -1,25 +1,49 @@
 # How Governance Works
 
-Every token launched on Sudo automatically gets a DAO. Token holders can create proposals, vote, and execute on-chain decisions.
+Every token launched on Sudo automatically gets a sovereign DAO. After the raffle completes and liquidity migrates, all token admin rights and LP tokens are transferred to the DAO. No admin retains any control. The DAO is the sole owner from that point forward.
 
 ## The Basics
 
 - **Voting power** is based on your LP (liquidity provider) token holdings for that token.
 - **Anyone with 100+ tokens** can create a proposal.
 - **Anyone with voting power** can vote on active proposals.
-- **Proposals are executed on-chain** — passed proposals take effect automatically, no admin intervention needed.
+- **Execution is fully permissionless** — once a proposal passes, any wallet can trigger execution. You just pay gas. No admin key, no operator, no single point of failure.
+
+## DAO Sovereignty
+
+When a raffle completes and liquidity is migrated, the following happens automatically:
+
+1. **Token admin rights** (mint, burn, transfer) are transferred to the DAO account.
+2. **LP tokens** are transferred to the DAO account.
+3. **External access is killed** — the DAO account's authentication key is rotated to a dead key. No wallet can sign transactions as the DAO.
+4. **All fund movement requires a passed proposal** — the DAO uses a stored SignerCapability that can only be invoked inside the governance contract's `execute_proposal` function.
+
+The DAO account address IS the treasury. APT, tokens, and LP positions all live there. The creator retains nothing after migration.
 
 ## What Can Be Governed
 
-DAOs on Sudo can make proposals across five categories:
+DAOs on Sudo can make proposals across these categories:
 
 | Action | What It Does |
 |---|---|
-| **Manage LP Tokens** | Lock, migrate, or rebalance the DAO's liquidity position |
+| **LP Rebalance** | Remove liquidity, re-add with different ratios, or hold as treasury |
+| **LP Migrate** | Move liquidity from one DEX to another |
+| **LP Lock** | Lock the LP position for a specified duration |
 | **Mint Tokens** | Mint new tokens to a specified address |
 | **Burn Tokens** | Burn tokens from a specified address |
 | **Update Token Metadata** | Change the token's name, symbol, URI, or description |
-| **Change DAO Keys** | Add, remove, or rotate DAO admin keys |
+| **Transfer Funds** | Send APT or tokens from the DAO treasury to an address |
+| **Signal Proposal** | Non-binding text proposal for community sentiment |
+
+## Permissionless Execution
+
+Once a proposal passes (meets quorum and pass threshold) and the voting period ends, **anyone** can call `execute_proposal`. The caller just pays gas — they have zero authority over the DAO. The governance contract uses the stored SignerCapability to execute the approved action on behalf of the DAO.
+
+This means:
+- No admin can block a passed proposal
+- No single point of failure for execution
+- Any community member (or bot) can trigger execution
+- The caller cannot modify, redirect, or alter the proposal — they only trigger what was already approved
 
 ## DAO Parameters
 
